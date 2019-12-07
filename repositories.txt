@@ -1,0 +1,13 @@
+/home/hyunmin/osfall2019-team7 c
+/home/hyunmin/scala scala
+/home/hyunmin/akka scala
+/home/hyunmin/netty java
+/home/hyunmin/node js
+/home/hyunmin/grpc-go go
+/home/hyunmin/ocaml ml
+/home/hyunmin/haskell hs
+/home/hyunmin/aeson hs
+/home/hyunmin/yesod hs
+/home/hyunmin/kotlin kt
+/home/hyunmin/django py
+/home/hyunmin/flask py
