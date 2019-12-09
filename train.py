@@ -31,8 +31,6 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 def train(langs):
     dataset = CodeDataset("data/train", langs)
     dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=num_workers, drop_last=True, shuffle=True)
-    
-    print("Dataloader Length = ", len(dataloader))
 
     loss_fn = nn.CrossEntropyLoss()
 
@@ -104,4 +102,5 @@ if __name__ == '__main__':
         langs = lines
 
     train(langs)
+    model.eval()
     test(langs)

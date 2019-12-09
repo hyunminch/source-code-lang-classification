@@ -1,0 +1,22 @@
+Epoch 1 Loss: 0.2880
+Epoch 2 Loss: 0.1091
+Epoch 3 Loss: 0.0878
+Epoch 4 Loss: 0.0690
+Epoch 5 Loss: 0.0548
+Epoch 6 Loss: 0.0706
+Epoch 7 Loss: 0.0403
+Epoch 8 Loss: 0.0375
+Epoch 9 Loss: 0.0569
+Epoch 10 Loss: 0.0530
+Epoch 11 Loss: 0.0392
+Epoch 12 Loss: 0.0480
+Epoch 13 Loss: 0.0743
+Epoch 14 Loss: 0.0520
+Epoch 15 Loss: 0.0429
+Epoch 16 Loss: 0.0361
+Epoch 17 Loss: 0.0938
+Epoch 18 Loss: 0.0260
+Epoch 19 Loss: 0.0853
+Epoch 20 Loss: 0.0703
+Score: 0.9714975845410628
+

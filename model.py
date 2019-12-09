@@ -36,20 +36,22 @@ class TextCNN(nn.Module):
             nn.Conv1d(256, 256, kernel_size=7, stride=1),
             nn.ReLU()
         )
-        
-        self.fc1 = nn.Sequential(
-            nn.Linear(5888, 2048),
-            nn.ReLU(),
-            nn.Dropout(p=0.5)
-        )
-        
-        self.fc2 = nn.Sequential(
-            nn.Linear(2048, 2048),
-            nn.ReLU(),
-            nn.Dropout(p=0.5)
-        )
 
-        self.fc3 = nn.Linear(2048, 5)
+        self.fc1 = nn.Linear(5888, 5)
+        
+        # self.fc1 = nn.Sequential(
+        #     nn.Linear(5888, 2048),
+        #     nn.ReLU(),
+        #     nn.Dropout(p=0.5)
+        # )
+
+        # self.fc2 = nn.Sequential(
+        #     nn.Linear(2048, 2048),
+        #     nn.ReLU(),
+        #     nn.Dropout(p=0.5)
+        # )
+
+        # self.fc3 = nn.Linear(2048, 5)
 
     def forward(self, x):
         x = self.conv1(x)
@@ -60,7 +62,7 @@ class TextCNN(nn.Module):
 
         x = x.view(x.size(0), -1)
         x = self.fc1(x)
-        x = self.fc2(x)
-        x = self.fc3(x)
+        # x = self.fc2(x)
+        # x = self.fc3(x)
         
         return x
