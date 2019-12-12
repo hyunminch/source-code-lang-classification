@@ -1,7 +1,5 @@
 from torch import nn
 from torch.nn import functional as F
-from torchtext.data import Field
-from torchtext.vocab import Vectors
 import numpy as np
 
 
@@ -15,7 +13,7 @@ class TextCNN(nn.Module):
     5 outputs that denote the probability of the input to be
     the ith output.
     '''
-    def __init__(self, alphabet_size):
+    def __init__(self, alphabet_size, output_class_size):
         super(TextCNN, self).__init__()
 
         self.conv1 = nn.Sequential(
@@ -54,7 +52,7 @@ class TextCNN(nn.Module):
         #     nn.ReLU()
         # )
 
-        self.fc1 = nn.Linear(8960, 5)
+        self.fc1 = nn.Linear(8960, output_class_size)
         
         # self.fc1 = nn.Sequential(
         #     nn.Linear(5888, 2048),
@@ -68,7 +66,7 @@ class TextCNN(nn.Module):
         #     nn.Dropout(p=0.1)
         # )
 
-        # self.fc3 = nn.Linear(2048, 5)
+        # self.fc3 = nn.Linear(2048, output_class_size)
 
     def forward(self, x):
         x = self.conv1(x)

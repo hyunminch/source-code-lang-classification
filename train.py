@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 from dataset import CodeDataset
 from model import TextCNN
 
+alphabet_size = 128
 num_classes = 5
 num_epochs = 20
 
@@ -23,7 +24,7 @@ batch_size = 5
 num_workers = 4
 
 
-model = TextCNN(128)
+model = TextCNN(alphabet_size, num_classes)
 model.cuda()
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)

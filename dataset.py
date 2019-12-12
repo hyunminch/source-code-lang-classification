@@ -24,6 +24,11 @@ class CodeDataset(Dataset):
         return len(self.codes)
 
     def __getitem__(self, idx):
+        '''
+        When requested, retrieves a code using idx and
+        one-hot encodes the code to a 128 X 1024 tensor.
+        Also returns the expected output for this chunk of code.
+        '''
         code = self.codes[idx]
         x = self.encode_to_tensor(code)
         lang = self.labels[idx]
@@ -31,11 +36,20 @@ class CodeDataset(Dataset):
         return x, y
 
     def build_lang_indices(self):
+        '''
+        Builds indices of langs so that labels have
+        a 0 to n - 1 value.
+        '''
         self.lang_indices = dict()
         for idx, lang in enumerate(self.langs):
             self.lang_indices[lang] = idx
 
     def encode_to_tensor(self, code):
+        '''
+        Encodes code using ascii code. When a character
+        does not belong to the set of 128 ascii characters,
+        consider it meaningless and consider it a blank character.
+        '''
         tensor = torch.zeros(128, self.max_length)
 
         for idx, ch in enumerate(code):
