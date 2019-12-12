@@ -72,8 +72,6 @@ def test(langs):
         # Assume cuda is on
         inputs, target = inputs.cuda(), target.cuda()
 
-        inputs = Variable(inputs)
-        target = Variable(target)
         output = model(inputs)
 
         maxed = torch.max(output.cpu().data, 1)
