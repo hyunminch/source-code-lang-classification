@@ -18,6 +18,9 @@ def test_lang_data_file_dir(lang, filename):
 lang_cnt = dict()
 alphabet = set()
 
+# Reads directory and for the lang given, aggregates 
+# each directory's files and aggregates them at either
+# the test_path or train_path.
 def aggregate(directory, lang, max_cnt=900):
     file_lang = '.' + lang
 
